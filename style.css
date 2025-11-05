@@ -365,7 +365,7 @@ nav ul li a:not(.btn):hover::after {
 
 .service-img-3 {
     background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
-                url('images/bridal&special occations.jpg');
+                url('images/bridal&special occasions.jpg');
     background-size: cover;
     background-position: center;
 }
