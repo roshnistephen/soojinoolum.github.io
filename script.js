@@ -1,5 +1,37 @@
-// Contact Form Submission Handler
+// Hamburger Menu Toggle
 document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.getElementById('hamburger');
+    const navUl = document.querySelector('nav ul');
+    
+    if (hamburger && navUl) {
+        hamburger.addEventListener('click', function(event) {
+            event.stopPropagation();
+            hamburger.classList.toggle('active');
+            navUl.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a link
+        const navLinks = document.querySelectorAll('nav ul li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                hamburger.classList.remove('active');
+                navUl.classList.remove('active');
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const isClickInsideNav = navUl.contains(event.target);
+            const isClickOnHamburger = hamburger.contains(event.target);
+            
+            if (!isClickInsideNav && !isClickOnHamburger && navUl.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                navUl.classList.remove('active');
+            }
+        });
+    }
+    
+    // Contact Form Submission Handler
     const contactForm = document.getElementById('contactForm');
     
     if (contactForm) {

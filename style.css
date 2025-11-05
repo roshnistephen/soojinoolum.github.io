@@ -1,15 +1,20 @@
 /* Root Variables */
 :root {
-    --primary-color: #2c3e50;
-    --secondary-color: #c9a86a;
-    --accent-color: #8b6f47;
-    --text-dark: #2c3e50;
-    --text-light: #6c757d;
-    --bg-light: #f8f9fa;
+    --primary-color: #6366f1;
+    --secondary-color: #ec4899;
+    --accent-color: #f59e0b;
+    --success-color: #10b981;
+    --purple-accent: #8b5cf6;
+    --text-dark: #1f2937;
+    --text-light: #6b7280;
+    --bg-light: #f9fafb;
     --white: #ffffff;
-    --border-color: #e0e0e0;
-    --shadow: 0 2px 15px rgba(0,0,0,0.1);
-    --shadow-hover: 0 5px 25px rgba(0,0,0,0.15);
+    --border-color: #e5e7eb;
+    --shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+    --shadow-hover: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+    --gradient-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    --gradient-secondary: linear-gradient(135deg, #ec4899 0%, #f59e0b 100%);
+    --gradient-colorful: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
 }
 
 /* Global Styles */
@@ -104,8 +109,10 @@ nav ul li a {
     position: relative;
 }
 
-nav ul li a:not(.btn):hover {
+nav ul li a:not(.btn):hover,
+nav ul li a:not(.btn):focus {
     color: var(--secondary-color);
+    outline: none;
 }
 
 nav ul li a:not(.btn)::after {
@@ -115,20 +122,50 @@ nav ul li a:not(.btn)::after {
     height: 2px;
     bottom: -5px;
     left: 0;
-    background: var(--secondary-color);
+    background: var(--gradient-secondary);
     transition: width 0.3s ease;
 }
 
-nav ul li a:not(.btn):hover::after {
+nav ul li a:not(.btn):hover::after,
+nav ul li a:not(.btn):focus::after {
     width: 100%;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+    z-index: 1001;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--primary-color);
+    transition: all 0.3s ease;
+    border-radius: 3px;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
 }
 
 /* Buttons */
 .btn {
     display: inline-block;
     padding: 12px 24px;
-    border-radius: 5px;
-    font-weight: 500;
+    border-radius: 8px;
+    font-weight: 600;
     transition: all 0.3s ease;
     cursor: pointer;
     border: none;
@@ -136,14 +173,18 @@ nav ul li a:not(.btn):hover::after {
 }
 
 .btn-primary {
-    background: var(--secondary-color);
+    background: var(--gradient-primary);
     color: var(--white);
+    box-shadow: var(--shadow);
 }
 
-.btn-primary:hover {
-    background: var(--accent-color);
+.btn-primary:hover,
+.btn-primary:focus {
     transform: translateY(-2px);
     box-shadow: var(--shadow-hover);
+    opacity: 0.9;
+    outline: 3px solid color-mix(in srgb, var(--primary-color) 30%, transparent);
+    outline-offset: 2px;
 }
 
 .btn-secondary {
@@ -152,9 +193,13 @@ nav ul li a:not(.btn):hover::after {
     border: 2px solid var(--primary-color);
 }
 
-.btn-secondary:hover {
-    background: var(--primary-color);
+.btn-secondary:hover,
+.btn-secondary:focus {
+    background: var(--gradient-primary);
     color: var(--white);
+    border-color: transparent;
+    outline: 3px solid color-mix(in srgb, var(--primary-color) 30%, transparent);
+    outline-offset: 2px;
 }
 
 .btn-large {
@@ -166,8 +211,8 @@ nav ul li a:not(.btn):hover::after {
 .hero-section {
     position: relative;
     height: 600px;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23c9a86a" width="1200" height="600"/><path fill="%238b6f47" d="M0 300 Q300 200 600 300 T1200 300 V600 H0 Z"/></svg>');
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), 
+                url('images/hero.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -217,7 +262,7 @@ nav ul li a:not(.btn):hover::after {
 
 /* Page Header */
 .page-header {
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    background: var(--gradient-colorful);
     color: var(--white);
     padding: 80px 20px;
     text-align: center;
@@ -255,14 +300,17 @@ nav ul li a:not(.btn):hover::after {
 .feature-card {
     text-align: center;
     padding: 40px 20px;
-    background: var(--bg-light);
-    border-radius: 10px;
+    background: var(--white);
+    border-radius: 12px;
     transition: all 0.3s ease;
+    border: 2px solid transparent;
+    box-shadow: var(--shadow);
 }
 
 .feature-card:hover {
     transform: translateY(-10px);
     box-shadow: var(--shadow-hover);
+    border-color: var(--primary-color);
 }
 
 .feature-icon {
@@ -312,17 +360,23 @@ nav ul li a:not(.btn):hover::after {
 
 .service-img-1 {
     background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect fill="%23d4af37" width="400" height="300"/><circle fill="%23c9a86a" cx="200" cy="150" r="80"/></svg>');
+                url('images/customstitching.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .service-img-2 {
     background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect fill="%238b6f47" width="400" height="300"/><path fill="%23c9a86a" d="M200 50 L350 150 L200 250 L50 150 Z"/></svg>');
+                url('images/alteration.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .service-img-3 {
     background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect fill="%23c9a86a" width="400" height="300"/><rect fill="%23d4af37" x="100" y="75" width="200" height="150"/></svg>');
+                url('images/bridal&special occasions.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .service-item h3 {
@@ -781,7 +835,7 @@ nav ul li a:not(.btn):hover::after {
 /* CTA Section */
 .cta-section {
     padding: 80px 20px;
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    background: var(--gradient-colorful);
     color: var(--white);
 }
 
@@ -802,7 +856,7 @@ nav ul li a:not(.btn):hover::after {
 
 /* Footer */
 footer {
-    background: var(--primary-color);
+    background: var(--text-dark);
     color: var(--white);
     padding: 40px 20px 20px;
 }
@@ -853,7 +907,7 @@ footer {
 }
 
 .footer-credit:hover {
-    color: #d4af37;
+    color: var(--accent-color);
 }
 
 /* Responsive Design */
@@ -879,8 +933,51 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+    
+    nav {
+        position: relative;
+    }
+    
     nav ul {
-        display: none;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: min(280px, 70vw);
+        min-width: 250px;
+        height: 100vh;
+        background: var(--white);
+        flex-direction: column;
+        padding: 80px 20px 20px;
+        gap: 20px;
+        box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+        transition: right 0.3s ease;
+        z-index: 1000;
+    }
+    
+    nav ul.active {
+        right: 0;
+    }
+    
+    nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+    
+    nav ul li a {
+        display: block;
+        padding: 15px;
+        font-size: 18px;
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    nav ul li a:hover,
+    nav ul li a:focus {
+        background-color: var(--bg-light);
+        color: var(--primary-color);
+        outline: none;
     }
     
     .hero-section {
