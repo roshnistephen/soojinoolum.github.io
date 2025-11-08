@@ -1,0 +1,24 @@
+# robots.txt for SOOJI_NOOLUM website
+
+User-agent: *
+Allow: /
+
+# Allow all search engines to crawl the entire site
+Allow: /index.html
+Allow: /gallery.html
+Allow: /about.html
+Allow: /contact.html
+
+# Allow access to CSS, JS and images for better rendering in search results
+Allow: /style.css
+Allow: /script.js
+Allow: /images/
+
+# Disallow access to system files
+Disallow: /.git/
+Disallow: /.gitignore
+Disallow: /.DS_Store
+Disallow: /generate-manifest.js
+
+# Sitemap location
+Sitemap: https://roshnistephen.github.io/sooji-noolum/sitemap.xml
