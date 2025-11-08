@@ -1,0 +1,728 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2025-11-08T05:12:16.014Z",
+  "categories": {
+    "wedding": {
+      "name": "Wedding Gown",
+      "description": "Custom wedding gown"
+    },
+    "lehenga": {
+      "name": "Partywear Lehenga",
+      "description": "Elegant partywear lehenga"
+    },
+    "blouse": {
+      "name": "Bridal Ariwork Blouse",
+      "description": "Stunning bridal blouse with intricate handwork"
+    },
+    "kids": {
+      "name": "Kids Birthday Frock",
+      "description": "Adorable custom birthday frock"
+    },
+    "dhavani": {
+      "name": "Dhavani Design",
+      "description": "Traditional dhavani set with contemporary styling"
+    },
+    "new-arrivals": {
+      "name": "New Arrivals",
+      "description": "Latest collection"
+    }
+  },
+  "images": [
+    {
+      "id": "wedding-1",
+      "category": "wedding",
+      "path": "images/gallery/wedding/wedding-01.jpg",
+      "title": "Wedding Gown 01",
+      "description": "Custom wedding gown",
+      "available": true
+    },
+    {
+      "id": "wedding-2",
+      "category": "wedding",
+      "path": "images/gallery/wedding/wedding-02.jpg",
+      "title": "Wedding Gown 02",
+      "description": "Custom wedding gown",
+      "available": true
+    },
+    {
+      "id": "wedding-3",
+      "category": "wedding",
+      "path": "images/gallery/wedding/wedding-03.jpg",
+      "title": "Wedding Gown 03",
+      "description": "Custom wedding gown",
+      "available": true
+    },
+    {
+      "id": "wedding-4",
+      "category": "wedding",
+      "path": "images/gallery/wedding/wedding-04.jpg",
+      "title": "Wedding Gown 04",
+      "description": "Custom wedding gown",
+      "available": true
+    },
+    {
+      "id": "wedding-5",
+      "category": "wedding",
+      "path": "images/gallery/wedding/wedding-05.jpg",
+      "title": "Wedding Gown 05",
+      "description": "Custom wedding gown",
+      "available": true
+    },
+    {
+      "id": "wedding-6",
+      "category": "wedding",
+      "path": "images/gallery/wedding/wedding-06.jpg",
+      "title": "Wedding Gown 06",
+      "description": "Custom wedding gown",
+      "available": true
+    },
+    {
+      "id": "wedding-7",
+      "category": "wedding",
+      "path": "images/gallery/wedding/wedding-07.jpg",
+      "title": "Wedding Gown 07",
+      "description": "Custom wedding gown",
+      "available": true
+    },
+    {
+      "id": "wedding-8",
+      "category": "wedding",
+      "path": "images/gallery/wedding/wedding-08.jpg",
+      "title": "Wedding Gown 08",
+      "description": "Custom wedding gown",
+      "available": true
+    },
+    {
+      "id": "wedding-9",
+      "category": "wedding",
+      "path": "images/gallery/wedding/wedding-09.jpg",
+      "title": "Wedding Gown 09",
+      "description": "Custom wedding gown",
+      "available": true
+    },
+    {
+      "id": "wedding-10",
+      "category": "wedding",
+      "path": "images/gallery/wedding/wedding-10.jpg",
+      "title": "Wedding Gown 10",
+      "description": "Custom wedding gown",
+      "available": true
+    },
+    {
+      "id": "wedding-11",
+      "category": "wedding",
+      "path": "images/gallery/wedding/wedding-11.jpg",
+      "title": "Wedding Gown 11",
+      "description": "Custom wedding gown",
+      "available": true
+    },
+    {
+      "id": "wedding-12",
+      "category": "wedding",
+      "path": "images/gallery/wedding/wedding-12.jpg",
+      "title": "Wedding Gown 12",
+      "description": "Custom wedding gown",
+      "available": true
+    },
+    {
+      "id": "wedding-13",
+      "category": "wedding",
+      "path": "images/gallery/wedding/wedding-13.jpg",
+      "title": "Wedding Gown 13",
+      "description": "Custom wedding gown",
+      "available": true
+    },
+    {
+      "id": "wedding-14",
+      "category": "wedding",
+      "path": "images/gallery/wedding/wedding-14.jpg",
+      "title": "Wedding Gown 14",
+      "description": "Custom wedding gown",
+      "available": true
+    },
+    {
+      "id": "wedding-15",
+      "category": "wedding",
+      "path": "images/gallery/wedding/wedding-15.jpg",
+      "title": "Wedding Gown 15",
+      "description": "Custom wedding gown",
+      "available": true
+    },
+    {
+      "id": "wedding-16",
+      "category": "wedding",
+      "path": "images/gallery/wedding/wedding-16.jpg",
+      "title": "Wedding Gown 16",
+      "description": "Custom wedding gown",
+      "available": true
+    },
+    {
+      "id": "wedding-17",
+      "category": "wedding",
+      "path": "images/gallery/wedding/wedding-17.jpg",
+      "title": "Wedding Gown 17",
+      "description": "Custom wedding gown",
+      "available": true
+    },
+    {
+      "id": "wedding-18",
+      "category": "wedding",
+      "path": "images/gallery/wedding/wedding-18.jpg",
+      "title": "Wedding Gown 18",
+      "description": "Custom wedding gown",
+      "available": true
+    },
+    {
+      "id": "wedding-19",
+      "category": "wedding",
+      "path": "images/gallery/wedding/wedding-19.jpg",
+      "title": "Wedding Gown 19",
+      "description": "Custom wedding gown",
+      "available": true
+    },
+    {
+      "id": "wedding-20",
+      "category": "wedding",
+      "path": "images/gallery/wedding/wedding-20.jpg",
+      "title": "Wedding Gown 20",
+      "description": "Custom wedding gown",
+      "available": true
+    },
+    {
+      "id": "wedding-21",
+      "category": "wedding",
+      "path": "images/gallery/wedding/wedding-21.jpg",
+      "title": "Wedding Gown 21",
+      "description": "Custom wedding gown",
+      "available": true
+    },
+    {
+      "id": "wedding-22",
+      "category": "wedding",
+      "path": "images/gallery/wedding/wedding-22.jpg",
+      "title": "Wedding Gown 22",
+      "description": "Custom wedding gown",
+      "available": true
+    },
+    {
+      "id": "lehenga-1",
+      "category": "lehenga",
+      "path": "images/gallery/lehenga/lehenga-01.jpg",
+      "title": "Partywear Lehenga 01",
+      "description": "Elegant partywear lehenga",
+      "available": true
+    },
+    {
+      "id": "lehenga-2",
+      "category": "lehenga",
+      "path": "images/gallery/lehenga/lehenga-02.jpg",
+      "title": "Partywear Lehenga 02",
+      "description": "Elegant partywear lehenga",
+      "available": true
+    },
+    {
+      "id": "lehenga-3",
+      "category": "lehenga",
+      "path": "images/gallery/lehenga/lehenga-03.jpg",
+      "title": "Partywear Lehenga 03",
+      "description": "Elegant partywear lehenga",
+      "available": true
+    },
+    {
+      "id": "lehenga-4",
+      "category": "lehenga",
+      "path": "images/gallery/lehenga/lehenga-04.jpg",
+      "title": "Partywear Lehenga 04",
+      "description": "Elegant partywear lehenga",
+      "available": true
+    },
+    {
+      "id": "blouse-1",
+      "category": "blouse",
+      "path": "images/gallery/blouse/blouse-01.jpeg",
+      "title": "Bridal Ariwork Blouse 01",
+      "description": "Stunning bridal blouse with intricate handwork",
+      "available": true
+    },
+    {
+      "id": "blouse-2",
+      "category": "blouse",
+      "path": "images/gallery/blouse/blouse-02.jpeg",
+      "title": "Bridal Ariwork Blouse 02",
+      "description": "Stunning bridal blouse with intricate handwork",
+      "available": true
+    },
+    {
+      "id": "blouse-3",
+      "category": "blouse",
+      "path": "images/gallery/blouse/blouse-03.jpeg",
+      "title": "Bridal Ariwork Blouse 03",
+      "description": "Stunning bridal blouse with intricate handwork",
+      "available": true
+    },
+    {
+      "id": "blouse-4",
+      "category": "blouse",
+      "path": "images/gallery/blouse/blouse-04.jpeg",
+      "title": "Bridal Ariwork Blouse 04",
+      "description": "Stunning bridal blouse with intricate handwork",
+      "available": true
+    },
+    {
+      "id": "blouse-5",
+      "category": "blouse",
+      "path": "images/gallery/blouse/blouse-05.jpeg",
+      "title": "Bridal Ariwork Blouse 05",
+      "description": "Stunning bridal blouse with intricate handwork",
+      "available": true
+    },
+    {
+      "id": "kids-1",
+      "category": "kids",
+      "path": "images/gallery/kids/kids-01.jpeg",
+      "title": "Kids Birthday Frock 01",
+      "description": "Adorable custom birthday frock",
+      "available": true
+    },
+    {
+      "id": "kids-2",
+      "category": "kids",
+      "path": "images/gallery/kids/kids-02.jpeg",
+      "title": "Kids Birthday Frock 02",
+      "description": "Adorable custom birthday frock",
+      "available": true
+    },
+    {
+      "id": "kids-3",
+      "category": "kids",
+      "path": "images/gallery/kids/kids-03.jpeg",
+      "title": "Kids Birthday Frock 03",
+      "description": "Adorable custom birthday frock",
+      "available": true
+    },
+    {
+      "id": "kids-4",
+      "category": "kids",
+      "path": "images/gallery/kids/kids-04.jpeg",
+      "title": "Kids Birthday Frock 04",
+      "description": "Adorable custom birthday frock",
+      "available": true
+    },
+    {
+      "id": "kids-5",
+      "category": "kids",
+      "path": "images/gallery/kids/kids-05.jpeg",
+      "title": "Kids Birthday Frock 05",
+      "description": "Adorable custom birthday frock",
+      "available": true
+    },
+    {
+      "id": "kids-6",
+      "category": "kids",
+      "path": "images/gallery/kids/kids-06.jpeg",
+      "title": "Kids Birthday Frock 06",
+      "description": "Adorable custom birthday frock",
+      "available": true
+    },
+    {
+      "id": "kids-7",
+      "category": "kids",
+      "path": "images/gallery/kids/kids-07.jpeg",
+      "title": "Kids Birthday Frock 07",
+      "description": "Adorable custom birthday frock",
+      "available": true
+    },
+    {
+      "id": "kids-8",
+      "category": "kids",
+      "path": "images/gallery/kids/kids-08.jpeg",
+      "title": "Kids Birthday Frock 08",
+      "description": "Adorable custom birthday frock",
+      "available": true
+    },
+    {
+      "id": "kids-9",
+      "category": "kids",
+      "path": "images/gallery/kids/kids-09.jpeg",
+      "title": "Kids Birthday Frock 09",
+      "description": "Adorable custom birthday frock",
+      "available": true
+    },
+    {
+      "id": "kids-10",
+      "category": "kids",
+      "path": "images/gallery/kids/kids-10.jpeg",
+      "title": "Kids Birthday Frock 10",
+      "description": "Adorable custom birthday frock",
+      "available": true
+    },
+    {
+      "id": "kids-11",
+      "category": "kids",
+      "path": "images/gallery/kids/kids-11.jpeg",
+      "title": "Kids Birthday Frock 11",
+      "description": "Adorable custom birthday frock",
+      "available": true
+    },
+    {
+      "id": "kids-12",
+      "category": "kids",
+      "path": "images/gallery/kids/kids-12.jpeg",
+      "title": "Kids Birthday Frock 12",
+      "description": "Adorable custom birthday frock",
+      "available": true
+    },
+    {
+      "id": "kids-13",
+      "category": "kids",
+      "path": "images/gallery/kids/kids-13.jpeg",
+      "title": "Kids Birthday Frock 13",
+      "description": "Adorable custom birthday frock",
+      "available": true
+    },
+    {
+      "id": "kids-14",
+      "category": "kids",
+      "path": "images/gallery/kids/kids-14.jpeg",
+      "title": "Kids Birthday Frock 14",
+      "description": "Adorable custom birthday frock",
+      "available": true
+    },
+    {
+      "id": "kids-15",
+      "category": "kids",
+      "path": "images/gallery/kids/kids-15.jpeg",
+      "title": "Kids Birthday Frock 15",
+      "description": "Adorable custom birthday frock",
+      "available": true
+    },
+    {
+      "id": "kids-16",
+      "category": "kids",
+      "path": "images/gallery/kids/kids-16.jpeg",
+      "title": "Kids Birthday Frock 16",
+      "description": "Adorable custom birthday frock",
+      "available": true
+    },
+    {
+      "id": "kids-17",
+      "category": "kids",
+      "path": "images/gallery/kids/kids-17.jpeg",
+      "title": "Kids Birthday Frock 17",
+      "description": "Adorable custom birthday frock",
+      "available": true
+    },
+    {
+      "id": "kids-18",
+      "category": "kids",
+      "path": "images/gallery/kids/kids-18.jpeg",
+      "title": "Kids Birthday Frock 18",
+      "description": "Adorable custom birthday frock",
+      "available": true
+    },
+    {
+      "id": "kids-19",
+      "category": "kids",
+      "path": "images/gallery/kids/kids-19.jpeg",
+      "title": "Kids Birthday Frock 19",
+      "description": "Adorable custom birthday frock",
+      "available": true
+    },
+    {
+      "id": "kids-20",
+      "category": "kids",
+      "path": "images/gallery/kids/kids-20.jpg",
+      "title": "Kids Birthday Frock 20",
+      "description": "Adorable custom birthday frock",
+      "available": true
+    },
+    {
+      "id": "kids-21",
+      "category": "kids",
+      "path": "images/gallery/kids/kids-21.jpg",
+      "title": "Kids Birthday Frock 21",
+      "description": "Adorable custom birthday frock",
+      "available": true
+    },
+    {
+      "id": "dhavani-1",
+      "category": "dhavani",
+      "path": "images/gallery/dhavani/dhavani-01.jpeg",
+      "title": "Dhavani Design 01",
+      "description": "Traditional dhavani set with contemporary styling",
+      "available": true
+    },
+    {
+      "id": "dhavani-2",
+      "category": "dhavani",
+      "path": "images/gallery/dhavani/dhavani-02.jpeg",
+      "title": "Dhavani Design 02",
+      "description": "Traditional dhavani set with contemporary styling",
+      "available": true
+    },
+    {
+      "id": "dhavani-3",
+      "category": "dhavani",
+      "path": "images/gallery/dhavani/dhavani-03.jpeg",
+      "title": "Dhavani Design 03",
+      "description": "Traditional dhavani set with contemporary styling",
+      "available": true
+    },
+    {
+      "id": "dhavani-4",
+      "category": "dhavani",
+      "path": "images/gallery/dhavani/dhavani-04.jpeg",
+      "title": "Dhavani Design 04",
+      "description": "Traditional dhavani set with contemporary styling",
+      "available": true
+    },
+    {
+      "id": "dhavani-5",
+      "category": "dhavani",
+      "path": "images/gallery/dhavani/dhavani-05.jpeg",
+      "title": "Dhavani Design 05",
+      "description": "Traditional dhavani set with contemporary styling",
+      "available": true
+    },
+    {
+      "id": "dhavani-6",
+      "category": "dhavani",
+      "path": "images/gallery/dhavani/dhavani-06.jpeg",
+      "title": "Dhavani Design 06",
+      "description": "Traditional dhavani set with contemporary styling",
+      "available": true
+    },
+    {
+      "id": "dhavani-7",
+      "category": "dhavani",
+      "path": "images/gallery/dhavani/dhavani-07.jpeg",
+      "title": "Dhavani Design 07",
+      "description": "Traditional dhavani set with contemporary styling",
+      "available": true
+    },
+    {
+      "id": "dhavani-8",
+      "category": "dhavani",
+      "path": "images/gallery/dhavani/dhavani-08.jpeg",
+      "title": "Dhavani Design 08",
+      "description": "Traditional dhavani set with contemporary styling",
+      "available": true
+    },
+    {
+      "id": "dhavani-9",
+      "category": "dhavani",
+      "path": "images/gallery/dhavani/dhavani-09.jpeg",
+      "title": "Dhavani Design 09",
+      "description": "Traditional dhavani set with contemporary styling",
+      "available": true
+    },
+    {
+      "id": "dhavani-10",
+      "category": "dhavani",
+      "path": "images/gallery/dhavani/dhavani-10.jpeg",
+      "title": "Dhavani Design 10",
+      "description": "Traditional dhavani set with contemporary styling",
+      "available": true
+    },
+    {
+      "id": "dhavani-11",
+      "category": "dhavani",
+      "path": "images/gallery/dhavani/dhavani-11.jpeg",
+      "title": "Dhavani Design 11",
+      "description": "Traditional dhavani set with contemporary styling",
+      "available": true
+    },
+    {
+      "id": "dhavani-12",
+      "category": "dhavani",
+      "path": "images/gallery/dhavani/dhavani-12.jpeg",
+      "title": "Dhavani Design 12",
+      "description": "Traditional dhavani set with contemporary styling",
+      "available": true
+    },
+    {
+      "id": "dhavani-13",
+      "category": "dhavani",
+      "path": "images/gallery/dhavani/dhavani-13.jpeg",
+      "title": "Dhavani Design 13",
+      "description": "Traditional dhavani set with contemporary styling",
+      "available": true
+    },
+    {
+      "id": "dhavani-14",
+      "category": "dhavani",
+      "path": "images/gallery/dhavani/dhavani-14.jpeg",
+      "title": "Dhavani Design 14",
+      "description": "Traditional dhavani set with contemporary styling",
+      "available": true
+    },
+    {
+      "id": "dhavani-15",
+      "category": "dhavani",
+      "path": "images/gallery/dhavani/dhavani-15.jpeg",
+      "title": "Dhavani Design 15",
+      "description": "Traditional dhavani set with contemporary styling",
+      "available": true
+    },
+    {
+      "id": "dhavani-16",
+      "category": "dhavani",
+      "path": "images/gallery/dhavani/dhavani-16.jpeg",
+      "title": "Dhavani Design 16",
+      "description": "Traditional dhavani set with contemporary styling",
+      "available": true
+    },
+    {
+      "id": "dhavani-17",
+      "category": "dhavani",
+      "path": "images/gallery/dhavani/dhavani-17.jpeg",
+      "title": "Dhavani Design 17",
+      "description": "Traditional dhavani set with contemporary styling",
+      "available": true
+    },
+    {
+      "id": "dhavani-18",
+      "category": "dhavani",
+      "path": "images/gallery/dhavani/dhavani-18.jpeg",
+      "title": "Dhavani Design 18",
+      "description": "Traditional dhavani set with contemporary styling",
+      "available": true
+    },
+    {
+      "id": "dhavani-19",
+      "category": "dhavani",
+      "path": "images/gallery/dhavani/dhavani-19.jpeg",
+      "title": "Dhavani Design 19",
+      "description": "Traditional dhavani set with contemporary styling",
+      "available": true
+    },
+    {
+      "id": "new-arrivals-1",
+      "category": "new-arrivals",
+      "path": "images/gallery/new-arrivals/new arrivals-01.jpeg",
+      "title": "New Arrivals 01",
+      "description": "Latest collection",
+      "available": true
+    },
+    {
+      "id": "new-arrivals-2",
+      "category": "new-arrivals",
+      "path": "images/gallery/new-arrivals/new arrivals-02.jpeg",
+      "title": "New Arrivals 02",
+      "description": "Latest collection",
+      "available": true
+    },
+    {
+      "id": "new-arrivals-3",
+      "category": "new-arrivals",
+      "path": "images/gallery/new-arrivals/new arrivals-03.jpeg",
+      "title": "New Arrivals 03",
+      "description": "Latest collection",
+      "available": true
+    },
+    {
+      "id": "new-arrivals-4",
+      "category": "new-arrivals",
+      "path": "images/gallery/new-arrivals/new arrivals-04.jpeg",
+      "title": "New Arrivals 04",
+      "description": "Latest collection",
+      "available": true
+    },
+    {
+      "id": "new-arrivals-5",
+      "category": "new-arrivals",
+      "path": "images/gallery/new-arrivals/new arrivals-05.jpeg",
+      "title": "New Arrivals 05",
+      "description": "Latest collection",
+      "available": true
+    },
+    {
+      "id": "new-arrivals-6",
+      "category": "new-arrivals",
+      "path": "images/gallery/new-arrivals/new arrivals-06.jpeg",
+      "title": "New Arrivals 06",
+      "description": "Latest collection",
+      "available": true
+    },
+    {
+      "id": "new-arrivals-7",
+      "category": "new-arrivals",
+      "path": "images/gallery/new-arrivals/new arrivals-07.jpeg",
+      "title": "New Arrivals 07",
+      "description": "Latest collection",
+      "available": true
+    },
+    {
+      "id": "new-arrivals-8",
+      "category": "new-arrivals",
+      "path": "images/gallery/new-arrivals/new arrivals-08.jpeg",
+      "title": "New Arrivals 08",
+      "description": "Latest collection",
+      "available": true
+    },
+    {
+      "id": "new-arrivals-9",
+      "category": "new-arrivals",
+      "path": "images/gallery/new-arrivals/new arrivals-09.jpeg",
+      "title": "New Arrivals 09",
+      "description": "Latest collection",
+      "available": true
+    },
+    {
+      "id": "new-arrivals-10",
+      "category": "new-arrivals",
+      "path": "images/gallery/new-arrivals/new arrivals-10.jpeg",
+      "title": "New Arrivals 10",
+      "description": "Latest collection",
+      "available": true
+    },
+    {
+      "id": "new-arrivals-11",
+      "category": "new-arrivals",
+      "path": "images/gallery/new-arrivals/new arrivals-11.jpeg",
+      "title": "New Arrivals 11",
+      "description": "Latest collection",
+      "available": true
+    },
+    {
+      "id": "new-arrivals-12",
+      "category": "new-arrivals",
+      "path": "images/gallery/new-arrivals/new arrivals-12.jpeg",
+      "title": "New Arrivals 12",
+      "description": "Latest collection",
+      "available": true
+    },
+    {
+      "id": "new-arrivals-13",
+      "category": "new-arrivals",
+      "path": "images/gallery/new-arrivals/new arrivals-13.jpeg",
+      "title": "New Arrivals 13",
+      "description": "Latest collection",
+      "available": true
+    },
+    {
+      "id": "new-arrivals-14",
+      "category": "new-arrivals",
+      "path": "images/gallery/new-arrivals/new arrivals-14.jpeg",
+      "title": "New Arrivals 14",
+      "description": "Latest collection",
+      "available": true
+    },
+    {
+      "id": "new-arrivals-15",
+      "category": "new-arrivals",
+      "path": "images/gallery/new-arrivals/new arrivals-15.jpeg",
+      "title": "New Arrivals 15",
+      "description": "Latest collection",
+      "available": true
+    },
+    {
+      "id": "new-arrivals-16",
+      "category": "new-arrivals",
+      "path": "images/gallery/new-arrivals/new arrivals-16.jpeg",
+      "title": "New Arrivals 16",
+      "description": "Latest collection",
+      "available": true
+    }
+  ]
+}
