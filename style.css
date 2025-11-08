@@ -421,7 +421,7 @@ nav ul li a:not(.btn):focus::after {
 
 
 .service-img-blouse {
-    background: url('images/bridalariwork.jpg');
+    background: url('images/bridalariworki.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -615,7 +615,9 @@ nav ul li a:not(.btn):focus::after {
 
 .about-img-1 {
     background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect fill="%23c9a86a" width="400" height="400"/><path fill="%238b6f47" d="M0 200 Q100 150 200 200 T400 200 V400 H0 Z"/></svg>');
+                url('images/about-image about-img-1.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 /* Founder Section */
