@@ -8,149 +8,265 @@
 <link rel="icon" href="/favicon.ico">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+
+<!-- Page-local styles just for the gallery filters -->
+<style>
+  .gallery-filters {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 25px 0;
+    flex-wrap: wrap;
+  }
+  .filter-btn {
+    padding: 10px 16px;
+    border: 1px solid var(--border-color);
+    background: var(--white);
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+  }
+  .filter-btn.active,
+  .filter-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+  }
+  .gallery-item[hidden] { display: none !important; }
+  .empty-state {
+    text-align: center;
+    color: var(--text-light);
+    padding: 6px 0 18px;
+    display: none;
+  }
+  .empty-state.show { display: block; }
+</style>
 </head>
 <body>
 <header>
 <div class="container nav">
-<div class="brand">
-<div class="logo">
-<img src="images/logo.jpg" alt="SOOJI_NOOLUM Logo">
-</div>
-<div>
-<div class="title">SOOJI_NOOLUM</div>
-<div class="small">Custom Apparel & Clothing</div>
-</div>
-</div>
-<nav>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="gallery.html">Gallery</a></li>
-<li><a href="about.html">About Us</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-<div class="hamburger" id="hamburger">
-<span></span>
-<span></span>
-<span></span>
-</div>
-</nav>
+  <div class="brand">
+    <div class="logo">
+      <img src="images/logo.jpg" alt="SOOJI_NOOLUM Logo">
+    </div>
+    <div>
+      <div class="title">SOOJI_NOOLUM</div>
+      <div class="small">Custom Apparel & Clothing</div>
+    </div>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
 </div>
 </header>
 
 <main>
-<!-- Page Header -->
-<section class="page-header">
-<div class="container">
-<h1 class="page-title">Our Gallery</h1>
-<p class="page-subtitle">Explore our exquisite collection of custom-made apparel</p>
-</div>
-</section>
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1 class="page-title">Our Gallery</h1>
+      <p class="page-subtitle">Explore our exquisite collection of custom-made apparel</p>
+    </div>
+  </section>
 
-<!-- Gallery Grid -->
-<section class="gallery-section">
-<div class="container">
-<div class="gallery-grid">
-<!-- Product 1 - Wedding Gown -->
-<div class="gallery-item">
-<div class="gallery-image product-1">
-<span class="availability-tag available">Available</span>
-</div>
-<div class="gallery-info">
-<h3>Wedding Gown</h3>
-<p class="product-description">Exquisite wedding gowns tailored to perfection for your special day. Custom-designed with intricate details, premium fabrics, and personalized embellishments to make you look absolutely stunning.</p>
-</div>
-</div>
+  <!-- Gallery + Filters -->
+  <section class="gallery-section">
+    <div class="container">
 
-<!-- Product 2 - Partywear Lehenga -->
-<div class="gallery-item">
-<div class="gallery-image product-2">
-<span class="availability-tag available">Available</span>
-</div>
-<div class="gallery-info">
-<h3>Partywear Lehenga</h3>
-<p class="product-description">Elegant partywear lehengas crafted with rich fabrics and beautiful embroidery. Perfect for celebrations, festivals, and special occasions where you want to make a memorable impression.</p>
-</div>
-</div>
+      <!-- Filter Tabs -->
+      <div class="gallery-filters" id="galleryFilters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="wedding">Wedding Gown</button>
+        <button class="filter-btn" data-filter="lehenga">Partywear Lehenga</button>
+        <button class="filter-btn" data-filter="blouse">Bridal Ariwork Blouse</button>
+        <button class="filter-btn" data-filter="kids">Kids Birthday Frock</button>
+        <button class="filter-btn" data-filter="dhavani">Dhavani Design</button>
+      </div>
 
-<!-- Product 3 - Bridal Artwork Blouse -->
-<div class="gallery-item">
-<div class="gallery-image product-3">
-<span class="availability-tag available">Available</span>
-</div>
-<div class="gallery-info">
-<h3>Bridal Artwork Blouse</h3>
-<p class="product-description">Stunning bridal blouses featuring intricate handwork, zardozi, and traditional embroidery. Each piece is a masterpiece designed to complement your bridal saree perfectly.</p>
-</div>
-</div>
+      <div class="empty-state" id="emptyState">No photos in this category yet.</div>
 
-<!-- Product 4 - Kids Birthday Frock -->
-<div class="gallery-item">
-<div class="gallery-image product-4">
-<span class="availability-tag available">Available</span>
-</div>
-<div class="gallery-info">
-<h3>Kids Birthday Frock</h3>
-<p class="product-description">Adorable custom birthday frocks for your little ones. Comfortable, colorful, and beautifully designed to make their special day even more memorable with perfect fit and style.</p>
-</div>
-</div>
+      <!-- Image Grid -->
+      <div class="gallery-grid" id="galleryGrid">
+        <!-- ✅ WEDDING — images/gallery/wedding/wedding-01.jpg … wedding-22.jpg -->
+        <a class="gallery-item" data-category="wedding" href="images/gallery/wedding/wedding-01.jpg" target="_blank" rel="noopener">
+          <div class="gallery-image" style="background-image:url('images/gallery/wedding/wedding-01.jpg')"><span class="availability-tag available">Available</span></div>
+          <div class="gallery-info"><h3>Wedding Gown 01</h3><p class="product-description">Custom wedding gown</p></div>
+        </a>
+        <a class="gallery-item" data-category="wedding" href="images/gallery/wedding/wedding-02.jpg" target="_blank" rel="noopener">
+          <div class="gallery-image" style="background-image:url('images/gallery/wedding/wedding-02.jpg')"><span class="availability-tag available">Available</span></div>
+          <div class="gallery-info"><h3>Wedding Gown 02</h3><p class="product-description">Custom wedding gown</p></div>
+        </a>
+        <a class="gallery-item" data-category="wedding" href="images/gallery/wedding/wedding-03.jpg" target="_blank" rel="noopener">
+          <div class="gallery-image" style="background-image:url('images/gallery/wedding/wedding-03.jpg')"><span class="availability-tag available">Available</span></div>
+          <div class="gallery-info"><h3>Wedding Gown 03</h3><p class="product-description">Custom wedding gown</p></div>
+        </a>
+        <a class="gallery-item" data-category="wedding" href="images/gallery/wedding/wedding-04.jpg" target="_blank" rel="noopener">
+          <div class="gallery-image" style="background-image:url('images/gallery/wedding/wedding-04.jpg')"><span class="availability-tag available">Available</span></div>
+          <div class="gallery-info"><h3>Wedding Gown 04</h3><p class="product-description">Custom wedding gown</p></div>
+        </a>
+        <a class="gallery-item" data-category="wedding" href="images/gallery/wedding/wedding-05.jpg" target="_blank" rel="noopener">
+          <div class="gallery-image" style="background-image:url('images/gallery/wedding/wedding-05.jpg')"><span class="availability-tag available">Available</span></div>
+          <div class="gallery-info"><h3>Wedding Gown 05</h3><p class="product-description">Custom wedding gown</p></div>
+        </a>
+        <a class="gallery-item" data-category="wedding" href="images/gallery/wedding/wedding-06.jpg" target="_blank" rel="noopener">
+          <div class="gallery-image" style="background-image:url('images/gallery/wedding/wedding-06.jpg')"><span class="availability-tag available">Available</span></div>
+          <div class="gallery-info"><h3>Wedding Gown 06</h3><p class="product-description">Custom wedding gown</p></div>
+        </a>
+        <a class="gallery-item" data-category="wedding" href="images/gallery/wedding/wedding-07.jpg" target="_blank" rel="noopener">
+          <div class="gallery-image" style="background-image:url('images/gallery/wedding/wedding-07.jpg')"><span class="availability-tag available">Available</span></div>
+          <div class="gallery-info"><h3>Wedding Gown 07</h3><p class="product-description">Custom wedding gown</p></div>
+        </a>
+        <a class="gallery-item" data-category="wedding" href="images/gallery/wedding/wedding-08.jpg" target="_blank" rel="noopener">
+          <div class="gallery-image" style="background-image:url('images/gallery/wedding/wedding-08.jpg')"><span class="availability-tag available">Available</span></div>
+          <div class="gallery-info"><h3>Wedding Gown 08</h3><p class="product-description">Custom wedding gown</p></div>
+        </a>
+        <a class="gallery-item" data-category="wedding" href="images/gallery/wedding/wedding-09.jpg" target="_blank" rel="noopener">
+          <div class="gallery-image" style="background-image:url('images/gallery/wedding/wedding-09.jpg')"><span class="availability-tag available">Available</span></div>
+          <div class="gallery-info"><h3>Wedding Gown 09</h3><p class="product-description">Custom wedding gown</p></div>
+        </a>
+        <a class="gallery-item" data-category="wedding" href="images/gallery/wedding/wedding-10.jpg" target="_blank" rel="noopener">
+          <div class="gallery-image" style="background-image:url('images/gallery/wedding/wedding-10.jpg')"><span class="availability-tag available">Available</span></div>
+          <div class="gallery-info"><h3>Wedding Gown 10</h3><p class="product-description">Custom wedding gown</p></div>
+        </a>
+        <a class="gallery-item" data-category="wedding" href="images/gallery/wedding/wedding-11.jpg" target="_blank" rel="noopener">
+          <div class="gallery-image" style="background-image:url('images/gallery/wedding/wedding-11.jpg')"><span class="availability-tag available">Available</span></div>
+          <div class="gallery-info"><h3>Wedding Gown 11</h3><p class="product-description">Custom wedding gown</p></div>
+        </a>
+        <a class="gallery-item" data-category="wedding" href="images/gallery/wedding/wedding-12.jpg" target="_blank" rel="noopener">
+          <div class="gallery-image" style="background-image:url('images/gallery/wedding/wedding-12.jpg')"><span class="availability-tag available">Available</span></div>
+          <div class="gallery-info"><h3>Wedding Gown 12</h3><p class="product-description">Custom wedding gown</p></div>
+        </a>
+        <a class="gallery-item" data-category="wedding" href="images/gallery/wedding/wedding-13.jpg" target="_blank" rel="noopener">
+          <div class="gallery-image" style="background-image:url('images/gallery/wedding/wedding-13.jpg')"><span class="availability-tag available">Available</span></div>
+          <div class="gallery-info"><h3>Wedding Gown 13</h3><p class="product-description">Custom wedding gown</p></div>
+        </a>
+        <a class="gallery-item" data-category="wedding" href="images/gallery/wedding/wedding-14.jpg" target="_blank" rel="noopener">
+          <div class="gallery-image" style="background-image:url('images/gallery/wedding/wedding-14.jpg')"><span class="availability-tag available">Available</span></div>
+          <div class="gallery-info"><h3>Wedding Gown 14</h3><p class="product-description">Custom wedding gown</p></div>
+        </a>
+        <a class="gallery-item" data-category="wedding" href="images/gallery/wedding/wedding-15.jpg" target="_blank" rel="noopener">
+          <div class="gallery-image" style="background-image:url('images/gallery/wedding/wedding-15.jpg')"><span class="availability-tag available">Available</span></div>
+          <div class="gallery-info"><h3>Wedding Gown 15</h3><p class="product-description">Custom wedding gown</p></div>
+        </a>
+        <a class="gallery-item" data-category="wedding" href="images/gallery/wedding/wedding-16.jpg" target="_blank" rel="noopener">
+          <div class="gallery-image" style="background-image:url('images/gallery/wedding/wedding-16.jpg')"><span class="availability-tag available">Available</span></div>
+          <div class="gallery-info"><h3>Wedding Gown 16</h3><p class="product-description">Custom wedding gown</p></div>
+        </a>
+        <a class="gallery-item" data-category="wedding" href="images/gallery/wedding/wedding-17.jpg" target="_blank" rel="noopener">
+          <div class="gallery-image" style="background-image:url('images/gallery/wedding/wedding-17.jpg')"><span class="availability-tag available">Available</span></div>
+          <div class="gallery-info"><h3>Wedding Gown 17</h3><p class="product-description">Custom wedding gown</p></div>
+        </a>
+        <a class="gallery-item" data-category="wedding" href="images/gallery/wedding/wedding-18.jpg" target="_blank" rel="noopener">
+          <div class="gallery-image" style="background-image:url('images/gallery/wedding/wedding-18.jpg')"><span class="availability-tag available">Available</span></div>
+          <div class="gallery-info"><h3>Wedding Gown 18</h3><p class="product-description">Custom wedding gown</p></div>
+        </a>
+        <a class="gallery-item" data-category="wedding" href="images/gallery/wedding/wedding-19.jpg" target="_blank" rel="noopener">
+          <div class="gallery-image" style="background-image:url('images/gallery/wedding/wedding-19.jpg')"><span class="availability-tag available">Available</span></div>
+          <div class="gallery-info"><h3>Wedding Gown 19</h3><p class="product-description">Custom wedding gown</p></div>
+        </a>
+        <a class="gallery-item" data-category="wedding" href="images/gallery/wedding/wedding-20.jpg" target="_blank" rel="noopener">
+          <div class="gallery-image" style="background-image:url('images/gallery/wedding/wedding-20.jpg')"><span class="availability-tag available">Available</span></div>
+          <div class="gallery-info"><h3>Wedding Gown 20</h3><p class="product-description">Custom wedding gown</p></div>
+        </a>
+        <a class="gallery-item" data-category="wedding" href="images/gallery/wedding/wedding-21.jpg" target="_blank" rel="noopener">
+          <div class="gallery-image" style="background-image:url('images/gallery/wedding/wedding-21.jpg')"><span class="availability-tag available">Available</span></div>
+          <div class="gallery-info"><h3>Wedding Gown 21</h3><p class="product-description">Custom wedding gown</p></div>
+        </a>
+        <a class="gallery-item" data-category="wedding" href="images/gallery/wedding/wedding-22.jpg" target="_blank" rel="noopener">
+          <div class="gallery-image" style="background-image:url('images/gallery/wedding/wedding-22.jpg')"><span class="availability-tag available">Available</span></div>
+          <div class="gallery-info"><h3>Wedding Gown 22</h3><p class="product-description">Custom wedding gown</p></div>
+        </a>
 
-<!-- Product 5 - Dhavani Design -->
-<div class="gallery-item">
-<div class="gallery-image product-5">
-<span class="availability-tag available">Available</span>
-</div>
-<div class="gallery-info">
-<h3>Dhavani Design</h3>
-<p class="product-description">Traditional dhavani sets with contemporary styling. Comfortable, elegant designs perfect for cultural events, temple visits, and traditional celebrations with a modern touch.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
+        <!-- (Optional) Add other categories later by copying one block and changing
+             data-category + image path + title -->
+      </div>
+    </div>
+  </section>
 
-<!-- CTA Section -->
-<section class="cta-section">
-<div class="container">
-<div class="cta-content">
-<h2>Looking for Something Custom?</h2>
-<p>Let us create a unique piece just for you</p>
-<a href="contact.html" class="btn btn-primary btn-large">Contact Us</a>
-</div>
-</div>
-</section>
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Looking for Something Custom?</h2>
+        <p>Let us create a unique piece just for you</p>
+        <a href="contact.html" class="btn btn-primary btn-large">Contact Us</a>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer>
 <div class="container">
-<div class="footer-content">
-<div class="footer-brand">
-<div class="brand">
-    <div class="logo">
-        <img src="images/logo.jpg" alt="SOOJI_NOOLUM Logo" />
+  <div class="footer-content">
+    <div class="footer-brand">
+      <div class="brand">
+          <div class="logo">
+              <img src="images/logo.jpg" alt="SOOJI_NOOLUM Logo" />
+            </div>
+        <div>
+          <div class="title">SOOJI_NOOLUM</div>
+          <div class="small">Custom Apparel & Clothing</div>
+        </div>
       </div>
-      
-<div>
-<div class="title">SOOJI_NOOLUM</div>
-<div class="small">Custom Apparel & Clothing</div>
-</div>
-</div>
-</div>
-<div class="footer-links">
-<a href="index.html">Home</a>
-<a href="gallery.html">Gallery</a>
-<a href="about.html">About Us</a>
-<a href="contact.html">Contact</a>
-</div>
-</div>
-<div class="footer-bottom">
-<p>Designed and Developed by <a href="https://linkedin.com/in/roshni-a-s-545a6215a/" target="_blank" rel="noopener noreferrer" class="footer-credit">Roshni Stephen</a></p>
-<div class="footer-contact">
-<p>Contact us: <a href="tel:+919876543210">+91 98765 43210</a></p>
-</div>
-</div>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>Designed and Developed by <a href="https://linkedin.com/in/roshni-a-s-545a6215a/" target="_blank" rel="noopener noreferrer" class="footer-credit">Roshni Stephen</a></p>
+    <div class="footer-contact">
+      <p>Contact us: <a href="tel:+9199876543210">+91 98765 43210</a></p>
+    </div>
+  </div>
 </div>
 </footer>
 
 <script src="script.js"></script>
+
+<!-- Page-local JS: Category filtering + deep link -->
+<script>
+(function () {
+  const buttons = document.querySelectorAll('.filter-btn');
+  const items = document.querySelectorAll('.gallery-item');
+  const emptyState = document.getElementById('emptyState');
+
+  function applyFilter(category) {
+    let visible = 0;
+    items.forEach(item => {
+      const match = category === 'all' || item.dataset.category === category;
+      item.hidden = !match;
+      if (match) visible++;
+    });
+    emptyState.classList.toggle('show', visible === 0);
+  }
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      applyFilter(btn.dataset.filter);
+      history.replaceState(null, '', `#${btn.dataset.filter}`);
+    });
+  });
+
+  // Deep link support: gallery.html#wedding, #lehenga, etc.
+  const initial = (location.hash || '#all').replace('#','');
+  (document.querySelector(`.filter-btn[data-filter="${initial}"]`) || buttons[0]).click();
+})();
+</script>
 </body>
 </html>

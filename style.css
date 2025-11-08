@@ -408,35 +408,39 @@ nav ul li a:not(.btn):focus::after {
 
 .service-img-wedding {
     background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
-                linear-gradient(135deg, #f8f3ed 0%, #e8d5c4 100%);
+                url('images/wedding.jpg');
     background-size: cover;
     background-position: center;
 }
+
 
 .service-img-lehenga {
     background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
-                linear-gradient(135deg, #d4af37 0%, #c9a86a 100%);
+                url('images/lehanka.jpg');
     background-size: cover;
     background-position: center;
 }
+
 
 .service-img-blouse {
     background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
-                linear-gradient(135deg, #8b6f47 0%, #6b5638 100%);
+                url('images/bridalariwork.jpg');
     background-size: cover;
     background-position: center;
 }
+
 
 .service-img-kids {
     background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
-                linear-gradient(135deg, #ec4899 0%, #f59e0b 100%);
+                url('images/birthdayfrock.jpg');
     background-size: cover;
     background-position: center;
 }
 
+
 .service-img-dhavani {
     background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
-                linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+                url('images/dhavani.jpg');
     background-size: cover;
     background-position: center;
 }
