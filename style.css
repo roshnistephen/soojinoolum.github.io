@@ -146,6 +146,8 @@ nav ul li a:not(.btn):focus::after {
     cursor: pointer;
     gap: 4px;
     z-index: 1001;
+    padding: 8px;
+    position: relative;
 }
 
 .hamburger span {
@@ -154,6 +156,7 @@ nav ul li a:not(.btn):focus::after {
     background: var(--primary-color);
     transition: all 0.3s ease;
     border-radius: 3px;
+    pointer-events: none;
 }
 
 .hamburger.active span:nth-child(1) {
@@ -386,61 +389,53 @@ nav ul li a:not(.btn):focus::after {
 }
 
 .service-img-1 {
-    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
-                url('images/customstitching.jpg');
+    background: url('images/customstitching.jpg');
     background-size: cover;
     background-position: center;
 }
 
 .service-img-2 {
-    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
-                url('images/alteration.jpg');
+    background: url('images/alteration.jpg');
     background-size: cover;
     background-position: center;
 }
 
 .service-img-3 {
-    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
-                url('images/bridal&special occasions.jpg');
+    background: url('images/bridal&special occasions.jpg');
     background-size: cover;
     background-position: center;
 }
 
 .service-img-wedding {
-    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
-                url('images/wedding.jpg');
+    background: url('images/wedding.jpg');
     background-size: cover;
     background-position: center;
 }
 
 
 .service-img-lehenga {
-    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
-                url('images/lehanka.jpg');
+    background: url('images/lehanka.jpg');
     background-size: cover;
     background-position: center;
 }
 
 
 .service-img-blouse {
-    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
-                url('images/bridalariwork.jpg');
+    background: url('images/bridalariwork.jpg');
     background-size: cover;
     background-position: center;
 }
 
 
 .service-img-kids {
-    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
-                url('images/birthdayfrock.jpg');
+    background: url('images/birthdayfrock.jpg');
     background-size: cover;
     background-position: center;
 }
 
 
 .service-img-dhavani {
-    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
-                url('images/dhavani.jpg');
+    background: url('images/dhavani.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -982,44 +977,40 @@ footer {
     padding-top: 20px;
 }
 
-.footer-bottom p {
+.footer-developer {
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 8px;
+}
+
+.footer-powered {
     font-size: 14px;
-    color: rgba(255,255,255,0.8);
-    margin-bottom: 10px;
+    color: rgba(255,255,255,0.65);
+    margin-top: 8px;
 }
 
 .footer-credit {
-    color: var(--accent-color);
-    font-weight: 700;
-    font-size: 16px;
+    color: rgba(255,255,255,0.9);
+    font-weight: 500;
+    font-size: 13px;
     text-decoration: none;
-    padding: 2px 8px;
-    border-radius: 4px;
-    background: rgba(245, 158, 11, 0.1);
     transition: all 0.3s ease;
 }
 
 .footer-credit:hover {
-    background: rgba(245, 158, 11, 0.2);
-    color: #fbbf24;
-}
-
-.footer-contact {
-    text-align: center;
-    margin-top: 15px;
-    color: rgba(255,255,255,0.7);
-    font-size: 14px;
-}
-
-.footer-contact a {
-    color: var(--secondary-color);
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
-}
-
-.footer-contact a:hover {
     color: var(--accent-color);
+}
+
+.loka-link {
+    color: #0077ff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.loka-link:hover {
+    color: #66b0ff;
+    text-decoration: underline;
 }
 
 /* Responsive Design */

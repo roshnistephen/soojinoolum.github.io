@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Toggle menu when clicking hamburger
         hamburger.addEventListener('click', function(event) {
             event.stopPropagation();
+            event.preventDefault();
             const isActive = hamburger.classList.contains('active');
             
             if (isActive) {
