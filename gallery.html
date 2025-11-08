@@ -13,33 +13,77 @@
 <style>
   .gallery-filters {
     display: flex;
-    gap: 10px;
+    gap: 12px;
     justify-content: center;
-    margin: 25px 0;
+    margin: 35px 0;
     flex-wrap: wrap;
+    padding: 0 20px;
   }
   .filter-btn {
-    padding: 10px 16px;
-    border: 1px solid var(--border-color);
+    padding: 12px 24px;
+    border: 2px solid var(--border-color);
     background: var(--white);
-    border-radius: 20px;
+    border-radius: 25px;
     font-weight: 600;
     cursor: pointer;
     box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    font-size: 14px;
+    text-transform: capitalize;
   }
-  .filter-btn.active,
+  .filter-btn.active {
+    background: var(--gradient-primary);
+    color: var(--white);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+  }
   .filter-btn:hover {
     border-color: var(--primary-color);
     color: var(--primary-color);
+    transform: translateY(-2px);
+  }
+  .filter-btn.active:hover {
+    color: var(--white);
   }
   .gallery-item[hidden] { display: none !important; }
   .empty-state {
     text-align: center;
     color: var(--text-light);
-    padding: 6px 0 18px;
+    padding: 40px 0;
     display: none;
+    font-size: 18px;
   }
   .empty-state.show { display: block; }
+  
+  /* Enhanced gallery image styling for proper focus */
+  .gallery-image {
+    position: relative;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    border-radius: 10px 10px 0 0;
+  }
+  .gallery-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+  
+  /* Loading state */
+  .gallery-grid.loading {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  .loading-message {
+    text-align: center;
+    padding: 60px 20px;
+    font-size: 18px;
+    color: var(--text-light);
+  }
 </style>
 </head>
 <body>
@@ -83,112 +127,16 @@
   <section class="gallery-section">
     <div class="container">
 
-      <!-- Filter Tabs -->
+      <!-- Filter Tabs (dynamically populated) -->
       <div class="gallery-filters" id="galleryFilters">
         <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="wedding">Wedding Gown</button>
-        <button class="filter-btn" data-filter="lehenga">Partywear Lehenga</button>
-        <button class="filter-btn" data-filter="blouse">Bridal Ariwork Blouse</button>
-        <button class="filter-btn" data-filter="kids">Kids Birthday Frock</button>
-        <button class="filter-btn" data-filter="dhavani">Dhavani Design</button>
       </div>
 
       <div class="empty-state" id="emptyState">No photos in this category yet.</div>
 
-      <!-- Image Grid -->
+      <!-- Image Grid (dynamically populated) -->
       <div class="gallery-grid" id="galleryGrid">
-        <!-- ✅ WEDDING — images/gallery/wedding/wedding-01.jpg … wedding-22.jpg -->
-        <a class="gallery-item" data-category="wedding" href="images/gallery/wedding/wedding-01.jpg" target="_blank" rel="noopener">
-          <div class="gallery-image" style="background-image:url('images/gallery/wedding/wedding-01.jpg')"><span class="availability-tag available">Available</span></div>
-          <div class="gallery-info"><h3>Wedding Gown 01</h3><p class="product-description">Custom wedding gown</p></div>
-        </a>
-        <a class="gallery-item" data-category="wedding" href="images/gallery/wedding/wedding-02.jpg" target="_blank" rel="noopener">
-          <div class="gallery-image" style="background-image:url('images/gallery/wedding/wedding-02.jpg')"><span class="availability-tag available">Available</span></div>
-          <div class="gallery-info"><h3>Wedding Gown 02</h3><p class="product-description">Custom wedding gown</p></div>
-        </a>
-        <a class="gallery-item" data-category="wedding" href="images/gallery/wedding/wedding-03.jpg" target="_blank" rel="noopener">
-          <div class="gallery-image" style="background-image:url('images/gallery/wedding/wedding-03.jpg')"><span class="availability-tag available">Available</span></div>
-          <div class="gallery-info"><h3>Wedding Gown 03</h3><p class="product-description">Custom wedding gown</p></div>
-        </a>
-        <a class="gallery-item" data-category="wedding" href="images/gallery/wedding/wedding-04.jpg" target="_blank" rel="noopener">
-          <div class="gallery-image" style="background-image:url('images/gallery/wedding/wedding-04.jpg')"><span class="availability-tag available">Available</span></div>
-          <div class="gallery-info"><h3>Wedding Gown 04</h3><p class="product-description">Custom wedding gown</p></div>
-        </a>
-        <a class="gallery-item" data-category="wedding" href="images/gallery/wedding/wedding-05.jpg" target="_blank" rel="noopener">
-          <div class="gallery-image" style="background-image:url('images/gallery/wedding/wedding-05.jpg')"><span class="availability-tag available">Available</span></div>
-          <div class="gallery-info"><h3>Wedding Gown 05</h3><p class="product-description">Custom wedding gown</p></div>
-        </a>
-        <a class="gallery-item" data-category="wedding" href="images/gallery/wedding/wedding-06.jpg" target="_blank" rel="noopener">
-          <div class="gallery-image" style="background-image:url('images/gallery/wedding/wedding-06.jpg')"><span class="availability-tag available">Available</span></div>
-          <div class="gallery-info"><h3>Wedding Gown 06</h3><p class="product-description">Custom wedding gown</p></div>
-        </a>
-        <a class="gallery-item" data-category="wedding" href="images/gallery/wedding/wedding-07.jpg" target="_blank" rel="noopener">
-          <div class="gallery-image" style="background-image:url('images/gallery/wedding/wedding-07.jpg')"><span class="availability-tag available">Available</span></div>
-          <div class="gallery-info"><h3>Wedding Gown 07</h3><p class="product-description">Custom wedding gown</p></div>
-        </a>
-        <a class="gallery-item" data-category="wedding" href="images/gallery/wedding/wedding-08.jpg" target="_blank" rel="noopener">
-          <div class="gallery-image" style="background-image:url('images/gallery/wedding/wedding-08.jpg')"><span class="availability-tag available">Available</span></div>
-          <div class="gallery-info"><h3>Wedding Gown 08</h3><p class="product-description">Custom wedding gown</p></div>
-        </a>
-        <a class="gallery-item" data-category="wedding" href="images/gallery/wedding/wedding-09.jpg" target="_blank" rel="noopener">
-          <div class="gallery-image" style="background-image:url('images/gallery/wedding/wedding-09.jpg')"><span class="availability-tag available">Available</span></div>
-          <div class="gallery-info"><h3>Wedding Gown 09</h3><p class="product-description">Custom wedding gown</p></div>
-        </a>
-        <a class="gallery-item" data-category="wedding" href="images/gallery/wedding/wedding-10.jpg" target="_blank" rel="noopener">
-          <div class="gallery-image" style="background-image:url('images/gallery/wedding/wedding-10.jpg')"><span class="availability-tag available">Available</span></div>
-          <div class="gallery-info"><h3>Wedding Gown 10</h3><p class="product-description">Custom wedding gown</p></div>
-        </a>
-        <a class="gallery-item" data-category="wedding" href="images/gallery/wedding/wedding-11.jpg" target="_blank" rel="noopener">
-          <div class="gallery-image" style="background-image:url('images/gallery/wedding/wedding-11.jpg')"><span class="availability-tag available">Available</span></div>
-          <div class="gallery-info"><h3>Wedding Gown 11</h3><p class="product-description">Custom wedding gown</p></div>
-        </a>
-        <a class="gallery-item" data-category="wedding" href="images/gallery/wedding/wedding-12.jpg" target="_blank" rel="noopener">
-          <div class="gallery-image" style="background-image:url('images/gallery/wedding/wedding-12.jpg')"><span class="availability-tag available">Available</span></div>
-          <div class="gallery-info"><h3>Wedding Gown 12</h3><p class="product-description">Custom wedding gown</p></div>
-        </a>
-        <a class="gallery-item" data-category="wedding" href="images/gallery/wedding/wedding-13.jpg" target="_blank" rel="noopener">
-          <div class="gallery-image" style="background-image:url('images/gallery/wedding/wedding-13.jpg')"><span class="availability-tag available">Available</span></div>
-          <div class="gallery-info"><h3>Wedding Gown 13</h3><p class="product-description">Custom wedding gown</p></div>
-        </a>
-        <a class="gallery-item" data-category="wedding" href="images/gallery/wedding/wedding-14.jpg" target="_blank" rel="noopener">
-          <div class="gallery-image" style="background-image:url('images/gallery/wedding/wedding-14.jpg')"><span class="availability-tag available">Available</span></div>
-          <div class="gallery-info"><h3>Wedding Gown 14</h3><p class="product-description">Custom wedding gown</p></div>
-        </a>
-        <a class="gallery-item" data-category="wedding" href="images/gallery/wedding/wedding-15.jpg" target="_blank" rel="noopener">
-          <div class="gallery-image" style="background-image:url('images/gallery/wedding/wedding-15.jpg')"><span class="availability-tag available">Available</span></div>
-          <div class="gallery-info"><h3>Wedding Gown 15</h3><p class="product-description">Custom wedding gown</p></div>
-        </a>
-        <a class="gallery-item" data-category="wedding" href="images/gallery/wedding/wedding-16.jpg" target="_blank" rel="noopener">
-          <div class="gallery-image" style="background-image:url('images/gallery/wedding/wedding-16.jpg')"><span class="availability-tag available">Available</span></div>
-          <div class="gallery-info"><h3>Wedding Gown 16</h3><p class="product-description">Custom wedding gown</p></div>
-        </a>
-        <a class="gallery-item" data-category="wedding" href="images/gallery/wedding/wedding-17.jpg" target="_blank" rel="noopener">
-          <div class="gallery-image" style="background-image:url('images/gallery/wedding/wedding-17.jpg')"><span class="availability-tag available">Available</span></div>
-          <div class="gallery-info"><h3>Wedding Gown 17</h3><p class="product-description">Custom wedding gown</p></div>
-        </a>
-        <a class="gallery-item" data-category="wedding" href="images/gallery/wedding/wedding-18.jpg" target="_blank" rel="noopener">
-          <div class="gallery-image" style="background-image:url('images/gallery/wedding/wedding-18.jpg')"><span class="availability-tag available">Available</span></div>
-          <div class="gallery-info"><h3>Wedding Gown 18</h3><p class="product-description">Custom wedding gown</p></div>
-        </a>
-        <a class="gallery-item" data-category="wedding" href="images/gallery/wedding/wedding-19.jpg" target="_blank" rel="noopener">
-          <div class="gallery-image" style="background-image:url('images/gallery/wedding/wedding-19.jpg')"><span class="availability-tag available">Available</span></div>
-          <div class="gallery-info"><h3>Wedding Gown 19</h3><p class="product-description">Custom wedding gown</p></div>
-        </a>
-        <a class="gallery-item" data-category="wedding" href="images/gallery/wedding/wedding-20.jpg" target="_blank" rel="noopener">
-          <div class="gallery-image" style="background-image:url('images/gallery/wedding/wedding-20.jpg')"><span class="availability-tag available">Available</span></div>
-          <div class="gallery-info"><h3>Wedding Gown 20</h3><p class="product-description">Custom wedding gown</p></div>
-        </a>
-        <a class="gallery-item" data-category="wedding" href="images/gallery/wedding/wedding-21.jpg" target="_blank" rel="noopener">
-          <div class="gallery-image" style="background-image:url('images/gallery/wedding/wedding-21.jpg')"><span class="availability-tag available">Available</span></div>
-          <div class="gallery-info"><h3>Wedding Gown 21</h3><p class="product-description">Custom wedding gown</p></div>
-        </a>
-        <a class="gallery-item" data-category="wedding" href="images/gallery/wedding/wedding-22.jpg" target="_blank" rel="noopener">
-          <div class="gallery-image" style="background-image:url('images/gallery/wedding/wedding-22.jpg')"><span class="availability-tag available">Available</span></div>
-          <div class="gallery-info"><h3>Wedding Gown 22</h3><p class="product-description">Custom wedding gown</p></div>
-        </a>
-
-        <!-- (Optional) Add other categories later by copying one block and changing
-             data-category + image path + title -->
+        <div class="loading-message">Loading gallery...</div>
       </div>
     </div>
   </section>
@@ -237,35 +185,177 @@
 
 <script src="script.js"></script>
 
-<!-- Page-local JS: Category filtering + deep link -->
+<!-- Page-local JS: Dynamic gallery loading + Category filtering + deep link -->
 <script>
 (function () {
-  const buttons = document.querySelectorAll('.filter-btn');
-  const items = document.querySelectorAll('.gallery-item');
+  const filtersContainer = document.getElementById('galleryFilters');
+  const gridContainer = document.getElementById('galleryGrid');
   const emptyState = document.getElementById('emptyState');
+  let galleryItems = [];
+  let filterButtons = [];
 
-  function applyFilter(category) {
-    let visible = 0;
-    items.forEach(item => {
-      const match = category === 'all' || item.dataset.category === category;
-      item.hidden = !match;
-      if (match) visible++;
-    });
-    emptyState.classList.toggle('show', visible === 0);
+  /**
+   * Load manifest.json and initialize gallery
+   */
+  async function loadGallery() {
+    try {
+      const response = await fetch('manifest.json');
+      if (!response.ok) {
+        throw new Error('Failed to load manifest.json');
+      }
+      const manifest = await response.json();
+      
+      // Build filter buttons from categories
+      buildFilterButtons(manifest.categories);
+      
+      // Build gallery items from images
+      buildGalleryItems(manifest.images);
+      
+      // Set up filtering
+      setupFiltering();
+      
+      // Handle deep links (e.g., gallery.html#wedding)
+      handleDeepLink();
+      
+    } catch (error) {
+      console.error('Error loading gallery:', error);
+      gridContainer.innerHTML = '<div class="loading-message" style="color: #dc3545;">Error loading gallery. Please refresh the page.</div>';
+    }
   }
 
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      buttons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      applyFilter(btn.dataset.filter);
-      history.replaceState(null, '', `#${btn.dataset.filter}`);
+  /**
+   * Build filter buttons from categories
+   */
+  function buildFilterButtons(categories) {
+    // Keep the "All" button that already exists
+    const allButton = filtersContainer.querySelector('.filter-btn[data-filter="all"]');
+    
+    // Add category buttons
+    Object.keys(categories).forEach(categoryKey => {
+      const category = categories[categoryKey];
+      const button = document.createElement('button');
+      button.className = 'filter-btn';
+      button.dataset.filter = categoryKey;
+      button.textContent = category.name;
+      filtersContainer.appendChild(button);
     });
-  });
+    
+    filterButtons = filtersContainer.querySelectorAll('.filter-btn');
+  }
 
-  // Deep link support: gallery.html#wedding, #lehenga, etc.
-  const initial = (location.hash || '#all').replace('#','');
-  (document.querySelector(`.filter-btn[data-filter="${initial}"]`) || buttons[0]).click();
+  /**
+   * Build gallery items from images array
+   */
+  function buildGalleryItems(images) {
+    gridContainer.innerHTML = ''; // Clear loading message
+    
+    images.forEach(image => {
+      const item = createGalleryItem(image);
+      gridContainer.appendChild(item);
+    });
+    
+    galleryItems = gridContainer.querySelectorAll('.gallery-item');
+  }
+
+  /**
+   * Create a single gallery item element
+   */
+  function createGalleryItem(image) {
+    const link = document.createElement('a');
+    link.className = 'gallery-item';
+    link.dataset.category = image.category;
+    link.href = image.path;
+    link.target = '_blank';
+    link.rel = 'noopener';
+    
+    const imageDiv = document.createElement('div');
+    imageDiv.className = 'gallery-image';
+    
+    const img = document.createElement('img');
+    img.src = image.path;
+    img.alt = image.title;
+    img.loading = 'lazy';
+    
+    imageDiv.appendChild(img);
+    
+    if (image.available) {
+      const tag = document.createElement('span');
+      tag.className = 'availability-tag available';
+      tag.textContent = 'Available';
+      imageDiv.appendChild(tag);
+    }
+    
+    const info = document.createElement('div');
+    info.className = 'gallery-info';
+    
+    const title = document.createElement('h3');
+    title.textContent = image.title;
+    
+    const description = document.createElement('p');
+    description.className = 'product-description';
+    description.textContent = image.description;
+    
+    info.appendChild(title);
+    info.appendChild(description);
+    
+    link.appendChild(imageDiv);
+    link.appendChild(info);
+    
+    return link;
+  }
+
+  /**
+   * Set up filtering functionality
+   */
+  function setupFiltering() {
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Update active state
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        // Apply filter
+        const category = btn.dataset.filter;
+        applyFilter(category);
+        
+        // Update URL hash
+        history.replaceState(null, '', `#${category}`);
+      });
+    });
+  }
+
+  /**
+   * Apply category filter to gallery items
+   */
+  function applyFilter(category) {
+    let visibleCount = 0;
+    
+    galleryItems.forEach(item => {
+      const match = category === 'all' || item.dataset.category === category;
+      item.hidden = !match;
+      if (match) visibleCount++;
+    });
+    
+    // Show/hide empty state
+    emptyState.classList.toggle('show', visibleCount === 0);
+  }
+
+  /**
+   * Handle deep links (e.g., gallery.html#wedding)
+   */
+  function handleDeepLink() {
+    const hash = (location.hash || '#all').replace('#', '');
+    const targetButton = Array.from(filterButtons).find(btn => btn.dataset.filter === hash);
+    
+    if (targetButton) {
+      targetButton.click();
+    } else {
+      filterButtons[0].click(); // Default to "All"
+    }
+  }
+
+  // Initialize gallery on page load
+  loadGallery();
 })();
 </script>
 </body>
