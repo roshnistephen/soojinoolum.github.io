@@ -13,35 +13,39 @@
 <style>
   .gallery-filters {
     display: flex;
-    gap: 12px;
+    gap: 15px;
     justify-content: center;
-    margin: 35px 0;
+    align-items: center;
+    margin: 40px auto;
     flex-wrap: wrap;
     padding: 0 20px;
+    max-width: 900px;
   }
   .filter-btn {
-    padding: 12px 24px;
+    padding: 14px 28px;
     border: 2px solid var(--border-color);
     background: var(--white);
-    border-radius: 25px;
+    border-radius: 30px;
     font-weight: 600;
     cursor: pointer;
-    box-shadow: var(--shadow);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     transition: all 0.3s ease;
-    font-size: 14px;
+    font-size: 15px;
     text-transform: capitalize;
+    font-family: 'Inter', sans-serif;
   }
   .filter-btn.active {
     background: var(--gradient-primary);
     color: var(--white);
     border-color: var(--primary-color);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(99, 102, 241, 0.3);
   }
   .filter-btn:hover {
     border-color: var(--primary-color);
     color: var(--primary-color);
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
   }
   .filter-btn.active:hover {
     color: var(--white);
@@ -50,9 +54,10 @@
   .empty-state {
     text-align: center;
     color: var(--text-light);
-    padding: 40px 0;
+    padding: 60px 20px;
     display: none;
     font-size: 18px;
+    font-weight: 500;
   }
   .empty-state.show { display: block; }
   
@@ -63,7 +68,7 @@
     background-size: cover;
     background-position: center;
     overflow: hidden;
-    border-radius: 10px 10px 0 0;
+    border-radius: 12px 12px 0 0;
   }
   .gallery-image img {
     width: 100%;
@@ -80,9 +85,16 @@
   }
   .loading-message {
     text-align: center;
-    padding: 60px 20px;
+    padding: 80px 20px;
     font-size: 18px;
     color: var(--text-light);
+    font-weight: 500;
+  }
+  
+  /* Improved gallery grid layout */
+  .gallery-section {
+    padding: 60px 20px;
+    background: var(--bg-light);
   }
 </style>
 </head>
@@ -175,10 +187,8 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <p>Designed and Developed by <a href="https://linkedin.com/in/roshni-a-s-545a6215a/" target="_blank" rel="noopener noreferrer" class="footer-credit">Roshni Stephen</a></p>
-    <div class="footer-contact">
-      <p>Contact us: <a href="tel:+9199876543210">+91 98765 43210</a></p>
-    </div>
+    <p class="footer-developer">Designed and Developed by <a href="https://linkedin.com/in/roshni-a-s-545a6215a/" target="_blank" rel="noopener noreferrer" class="footer-credit">Roshni Stephen</a></p>
+    <p class="footer-powered">Powered by <a href="https://lokaai.in" target="_blank" rel="noopener noreferrer" class="loka-link">LOKA AI</a> – Smart AI tools for daily life</p>
   </div>
 </div>
 </footer>
