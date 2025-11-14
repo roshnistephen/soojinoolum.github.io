@@ -10,32 +10,6 @@ A professional website showcasing custom apparel and clothing designs with a dyn
 - **Professional Styling**: Modern UI with smooth animations and transitions.
 - **Proper Image Display**: All images are fully focused using object-fit cover.
 
-## 🔐 Admin Panel
-
-The website includes a secure admin panel for managing gallery content.
-
-### Accessing the Admin Panel
-
-1. Navigate to `/admin.html`
-2. Login with the admin password (default: `sooji2024`)
-3. Session automatically expires after 1 hour
-
-### Admin Features
-
-- **View All Images**: Browse all gallery images with category badges
-- **Filter by Category**: Quick filter to view images by category
-- **Edit Images**: Update image titles, descriptions, and availability
-- **Delete Images**: Remove images with confirmation dialog
-- **Add New Images**: Upload new images with drag-and-drop support
-- **Real-time Stats**: See total images and categories at a glance
-
-### Security Notes
-
-- Admin panel is password-protected
-- Session stored in localStorage with timeout
-- Admin page has `noindex, nofollow` meta tags to prevent search engine indexing
-- In production, implement server-side authentication and proper session management
-
 ## 📁 Gallery Structure
 
 Images are organized in the following structure:
@@ -108,10 +82,8 @@ Then open your browser to `http://localhost:8080`
 - `gallery.html` - Dynamic gallery page
 - `about.html` - About us page
 - `contact.html` - Contact page
-- `admin.html` - Admin panel for gallery management (password-protected)
-- `style.css` - Global styles
-- `script.js` - Common JavaScript
-- `admin.js` - Admin panel JavaScript
+- `style.css` - Global styles (unchanged)
+- `script.js` - Common JavaScript (unchanged)
 - `generate-manifest.js` - Gallery manifest generator
 - `manifest.json` - Generated gallery data (auto-generated)
 
