@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Admin Panel - SOOJI_NOOLUM</title>
+<link rel="icon" href="/favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Login Screen -->
+<div id="loginScreen" class="admin-login-screen">
+  <div class="admin-login-container">
+    <div class="admin-login-header">
+      <div class="logo">
+        <img src="images/logo.jpg" alt="SOOJI_NOOLUM Logo">
+      </div>
+      <h1>Admin Panel</h1>
+      <p>Gallery Content Management</p>
+    </div>
+    <form id="loginForm" class="admin-login-form">
+      <div class="form-group">
+        <label for="adminPassword">Password</label>
+        <input type="password" id="adminPassword" name="password" placeholder="Enter admin password" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Login</button>
+      <p class="admin-error-message" id="loginError"></p>
+    </form>
+  </div>
+</div>
+
+<!-- Admin Panel (Hidden until login) -->
+<div id="adminPanel" class="admin-panel" style="display: none;">
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">
+          <img src="images/logo.jpg" alt="SOOJI_NOOLUM Logo">
+        </div>
+        <div>
+          <div class="title">SOOJI_NOOLUM</div>
+          <div class="small">Admin Panel</div>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#" id="logoutBtn" class="btn btn-secondary" style="padding: 8px 16px;">Logout</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <h1 class="page-title">Gallery Management</h1>
+        <p class="page-subtitle">Manage your gallery images and descriptions</p>
+      </div>
+    </section>
+
+    <!-- Admin Controls -->
+    <section class="admin-section">
+      <div class="container">
+        <div class="admin-controls">
+          <div class="admin-stats">
+            <div class="stat-card">
+              <div class="stat-number" id="totalImages">0</div>
+              <div class="stat-label">Total Images</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number" id="totalCategories">0</div>
+              <div class="stat-label">Categories</div>
+            </div>
+          </div>
+          <div class="admin-actions">
+            <button class="btn btn-primary" id="addImageBtn">
+              <span>📷</span> Add New Image
+            </button>
+            <button class="btn btn-secondary" id="saveChangesBtn" style="display: none;">
+              <span>💾</span> Save All Changes
+            </button>
+          </div>
+        </div>
+
+        <!-- Category Filter -->
+        <div class="admin-filters">
+          <label>Filter by Category:</label>
+          <select id="categoryFilter" class="admin-select">
+            <option value="all">All Categories</option>
+          </select>
+        </div>
+
+        <!-- Gallery Management Grid -->
+        <div class="admin-gallery-grid" id="adminGalleryGrid">
+          <div class="loading-message">Loading gallery...</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="brand">
+            <div class="logo">
+              <img src="images/logo.jpg" alt="SOOJI_NOOLUM Logo" />
+            </div>
+            <div>
+              <div class="title">SOOJI_NOOLUM</div>
+              <div class="small">Custom Apparel & Clothing</div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-developer">Designed and Developed by <a href="https://linkedin.com/in/roshni-a-s-545a6215a/" target="_blank" rel="noopener noreferrer" class="footer-credit">Roshni Stephen</a></p>
+        <p class="footer-powered">Powered by <a href="https://lokaai.in" target="_blank" rel="noopener noreferrer" class="loka-link">LOKA AI</a> – Smart AI tools for daily life</p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- Modal for Add/Edit Image -->
+<div id="imageModal" class="admin-modal">
+  <div class="admin-modal-content">
+    <div class="admin-modal-header">
+      <h2 id="modalTitle">Add New Image</h2>
+      <button class="admin-modal-close" id="modalClose">&times;</button>
+    </div>
+    <form id="imageForm" class="admin-modal-form">
+      <input type="hidden" id="imageId" name="imageId">
+      
+      <div class="form-group">
+        <label for="imageCategory">Category *</label>
+        <select id="imageCategory" name="category" required class="admin-select">
+          <option value="">Select Category</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="imageTitle">Title *</label>
+        <input type="text" id="imageTitle" name="title" placeholder="e.g., Elegant White Ball Gown" required>
+      </div>
+
+      <div class="form-group">
+        <label for="imageDescription">Description *</label>
+        <textarea id="imageDescription" name="description" rows="4" placeholder="Enter a detailed description of the item..." required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="imageAvailable">Availability</label>
+        <div class="admin-checkbox">
+          <input type="checkbox" id="imageAvailable" name="available" checked>
+          <label for="imageAvailable">Mark as Available</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="imageFile">Image File</label>
+        <div class="admin-file-upload" id="fileUploadArea">
+          <input type="file" id="imageFile" name="file" accept="image/*">
+          <div class="file-upload-content">
+            <span class="file-icon">📁</span>
+            <p>Click to browse or drag and drop an image</p>
+            <small>Supported formats: JPG, PNG, GIF, WEBP</small>
+          </div>
+          <div id="imagePreview" class="image-preview"></div>
+        </div>
+      </div>
+
+      <div class="admin-modal-actions">
+        <button type="button" class="btn btn-secondary" id="cancelBtn">Cancel</button>
+        <button type="submit" class="btn btn-primary" id="submitBtn">Save Image</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>
